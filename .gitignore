@@ -1,1 +1,6 @@
  *.csv 
+
+# Large datasets (local only)
+case_studies/**/data/
+case_studies/**/data/*.csv
+case_studies/pfe/*.csv
