@@ -1,16 +1,27 @@
-#' Crossover Strategy SMA 7/21/200
+#' Bollinger Bands Breakout Strategy with RSI filter
 #'
 #' @description
-#' Implements a multi–moving-average trading strategy using SMA(7), SMA(21)
-#' and SMA(200). The SMA(21) vs SMA(200) relationship defines the market
-#' regime (bullish or bearish), while SMA(7) vs SMA(21) determines the timing
-#' of entries and exits. Depending on `long_only`, the strategy trades only long
-#' in bullish regimes or only short in bearish regimes. The function returns
-#' the vector of positions (+1 long, -1 short, 0 flat) for each date.
-#' 
-#' @param prices Numeric vector with closing prices
+#' Implements a Bollinger Band breakout trading strategy based on volatility
+#' compression and momentum confirmation. Bollinger Bands are computed using a
+#' rolling window of the last `bb_n` observations. A trade is triggered only
+#' when price breaks above (long) or below (short) the corresponding band
+#' during a low-volatility regime, defined by the Bollinger Band Width being
+#' below a specified historical quantile. RSI is used as a directional filter
+#' for entries and as a mean-reversion condition for exits.
 #'
-#' @return A numeric vector
+#' @param data A data.frame or tibble containing price data.
+#' @param price_col Character string specifying the column name of closing prices.
+#' @param bb_n Integer. Rolling window length for Bollinger Bands.
+#' @param k Numeric. Standard deviation multiplier for Bollinger Bands.
+#' @param rsi_n Integer. Lookback period for RSI calculation.
+#' @param rsi_long_thr Numeric. RSI threshold required to enter a long position.
+#' @param rsi_short_thr Numeric. RSI threshold required to enter a short position.
+#' @param bbw_quantile Numeric in (0,1). Historical quantile used to define
+#'        volatility compression via Bollinger Band Width.
+#'
+#' @return The input data with an additional column `position` representing
+#'         the strategy exposure over time.
+
 
 library(dplyr)
 library(quantmod)
@@ -93,6 +104,8 @@ bb_strategy <- function(data,
 data$position <- position
 return(data)
 }
+
+
 
 ## Backtesting Strategy
 
