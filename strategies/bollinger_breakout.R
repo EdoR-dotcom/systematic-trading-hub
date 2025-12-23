@@ -108,6 +108,7 @@ return(data)
 
 
 
+
 ## Backtesting Strategy
 
 backtest <- function(xts_prices, xts_signals) {
@@ -124,4 +125,5 @@ backtest <- function(xts_prices, xts_signals) {
   compareReturns <- cbind(returns, strategyReturns)
   return(compareReturns)
 }
+
 
