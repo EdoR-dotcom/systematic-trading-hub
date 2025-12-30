@@ -10,7 +10,7 @@
 #' for entries and as a mean-reversion condition for exits.
 #'
 #' @param data A data.frame or tibble containing price data.
-#' @param price_col Character scalar. Name of the column in `data` containing the close prices.
+#' @param price_col Character scalar. Name of the column in `data` containing the close prices. 
 #' @param bb_n Integer. Rolling window length for Bollinger Bands.
 #' @param k Numeric. Standard deviation multiplier for Bollinger Bands.
 #' @param rsi_n Integer. Lookback period for RSI calculation.
@@ -28,7 +28,7 @@ library(dplyr)
 library(quantmod)
 
 bb_strategy <- function(data,
-                        price_col = "prccd", 
+                        price_col = "prccd",
                         bb_n = 20,          # bollinger bands period
                         k = 1.8,            # deviazione standard
                         rsi_n = 14,         # RSI period
@@ -108,7 +108,6 @@ return(data)
 
 
 
-
 ## Backtesting Strategy
 
 backtest <- function(xts_prices, xts_signals) {
@@ -125,5 +124,3 @@ backtest <- function(xts_prices, xts_signals) {
   compareReturns <- cbind(returns, strategyReturns)
   return(compareReturns)
 }
-
-

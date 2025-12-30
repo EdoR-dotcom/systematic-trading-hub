@@ -10,7 +10,7 @@
 #' The strategy enforces directional consistency by allowing long positions
 #' only during bullish regimes and short positions only during bearish regimes,
 #' thereby reducing whipsaws and avoiding counter-trend trades.
-#' 
+#'
 #' @param data A data.frame or tibble containing price data.
 #' @param price_col Character scalar. Name of the column in `data` containing the close prices.
 #' @param fast_n Integer. Lookback window for the short-term moving average.
