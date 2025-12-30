@@ -10,7 +10,7 @@
 #' for entries and as a mean-reversion condition for exits.
 #'
 #' @param data A data.frame or tibble containing price data.
-#' @param price_col Character string specifying the column name of closing prices.
+#' @param price_col Character scalar. Name of the column in `data` containing the close prices.
 #' @param bb_n Integer. Rolling window length for Bollinger Bands.
 #' @param k Numeric. Standard deviation multiplier for Bollinger Bands.
 #' @param rsi_n Integer. Lookback period for RSI calculation.
@@ -20,7 +20,7 @@
 #'        volatility compression via Bollinger Band Width.
 #'
 #' @return The input data with an additional column `position` representing
-#'         the strategy exposure over time.
+#'         the strategy exposure over time (+1 long, -1 short, 0 flat).
 
 
 

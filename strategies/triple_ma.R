@@ -1,16 +1,25 @@
-#' Crossover Strategy SMA 7/21/200
+#' MA Crossover Strategy with Regime Filter
 #'
 #' @description
-#' Implements a multi–moving-average trading strategy using SMA(7), SMA(21)
-#' and SMA(200). The SMA(21) vs SMA(200) relationship defines the market
-#' regime (bullish or bearish), while SMA(7) vs SMA(21) determines the timing
-#' of entries and exits. Depending on `long_only`, the strategy trades only long
-#' in bullish regimes or only short in bearish regimes. The function returns
-#' the vector of positions (+1 long, -1 short, 0 flat) for each date.
-#' 
-#' @param prices Numeric vector with closing prices
+#' Implements a systematic trend-following strategy based on a hierarchical
+#' moving average structure. A medium- vs long-term moving average relationship
+#' is used to identify the prevailing market regime (bullish or bearish),
+#' while short- vs medium-term moving average crossovers are used to generate
+#' entry and exit signals.
 #'
-#' @return A numeric vector
+#' The strategy enforces directional consistency by allowing long positions
+#' only during bullish regimes and short positions only during bearish regimes,
+#' thereby reducing whipsaws and avoiding counter-trend trades.
+#' 
+#' @param data A data.frame or tibble containing price data.
+#' @param price_col Character scalar. Name of the column in `data` containing the close prices.
+#' @param fast_n Integer. Lookback window for the short-term moving average.
+#' @param mid_n Integer. Lookback window for the medium-term moving average.
+#' @param slow_n Integer. Lookback window for the long-term moving average.
+#'
+#'
+#' @return The input data with an additional column `position` representing
+#'         the strategy exposure over time (+1 long, -1 short, 0 flat).
 
 
 library(dplyr)
