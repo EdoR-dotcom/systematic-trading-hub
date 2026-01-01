@@ -10,13 +10,13 @@ The repository is organized into two main research areas: strategy development a
 
 ### Strategy Research
 
-The *strategy* section ([strategies branch](https://github.com/EdoR-dotcom/systematic-trading-hub/blob/strategies/README.md)) represents the conceptual laboratory where trading strategies are designed and developed. This section documents the underlying methodology and trading philosophy, detailing how discretionary market insights are translated into structured signal hierarchies that ultimately drive execution.
+The [strategies branch](https://github.com/EdoR-dotcom/systematic-trading-hub/blob/strategies/README.md) represents the conceptual laboratory where trading strategies are designed and developed. This section documents the underlying methodology and trading philosophy, detailing how discretionary market insights are translated into structured signal hierarchies that ultimately drive execution.
 
 The research process begins with the analysis of different market structures. Strategies are then classified into main families according to how they exploit market behavior and how execution logic is designed. Emphasis is placed on clarity of assumptions, signal construction, and coherence between market structure, strategy logic, and execution.
 
 ### Case Studies and Empirical Validation
 
-The *case studies* section ([case-studies branch](https://github.com/EdoR-dotcom/systematic-trading-hub/blob/case-study/README.md)) represents the empirical laboratory. Here, trading strategies are backtested, optimized, and progressively improved using historical data.
+The [case-studies branch](https://github.com/EdoR-dotcom/systematic-trading-hub/blob/case-study/README.md) represents the empirical laboratory. Here, trading strategies are backtested, optimized, and progressively improved using historical data.
 
 Strategies are applied across different markets and environments with the objective of identifying the conditions under which each strategy delivers robust outperformance relative to its benchmark. The emphasis is not on over-optimization, but on understanding where, why, and under which market regimes a strategy performs effectively.
 
