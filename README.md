@@ -10,7 +10,7 @@ The repository is organized into two main research areas: strategy development a
 
 ### Strategy Research
 
-The [strategies](https://github.com/EdoR-dotcom/systematic-trading-hub/blob/strategies/README.md) branch represents the conceptual laboratory where trading strategies are designed and developed. This section documents the underlying methodology and trading philosophy, detailing how discretionary market insights are translated into structured signal hierarchies that ultimately drive execution.
+The [strategies](https://github.com/EdoR-dotcom/systematic-trading-hub/blob/strategies) branch represents the conceptual laboratory where trading strategies are designed and developed. This section documents the underlying methodology and trading philosophy, detailing how discretionary market insights are translated into structured signal hierarchies that ultimately drive execution.
 
 The research process begins with the analysis of different market structures. Strategies are then classified into main families according to how they exploit market behavior and how execution logic is designed. Emphasis is placed on clarity of assumptions, signal construction, and coherence between market structure, strategy logic, and execution.
 
