@@ -1,60 +1,63 @@
 # Strategies Laboratory
 
-This section represent the research hub where trading strategies are designed. Before going through in details of how strategies are built we are going to define the organization of strategies. Latern on the metodology for building a roboust strategy a from that having the possibility to add other triggers or filters to better improve. 
+This section represents the research hub where trading strategies are designed and developed. Before detailing the specific mechanics of strategy construction, the organizational framework used to classify strategies is introduced.
 
-## Classification of strategies
+Subsequently, the methodology for building robust trading strategies is presented. The framework provides a structured foundation for defining the core strategy architecture, while supporting the incremental integration of supplementary triggers, filters, and constraints aimed at improving robustness and regime adaptability.
+
+
+## Foundational Framework
 
 Strategies are classified according to two characteristics, in hierarchical order.
-First, they are categorized based on the type of market structure they are designed to exploit.
-Second, they are differentiated by the execution logic through which alpha is extracted.
+First, they are categorized based on the type of **market structure**they are designed to exploit.
+Second, they are differentiated by the **execution logic** through which alpha is extracted.
+
 
 ### Macro-level Classification
 
 Strategies are classified into three macro-level families.
 
-#### Trend-Following Strategies
+#### *Trend-Following Strategies*
 
 Trend-following strategies are designed to exploit markets characterized by well-defined directional trends, either bullish or bearish. Their objective is to generate alpha during phases of sustained momentum, where price exhibits strong directional persistence over a given time horizon.
 
-The dominant behavioral logic underlying these strategies is momentum and continuation, often associated with volatility expansion and decompression dynamics used to identify phases of acceleration and consolidation within an existing trend. Consequently, trend-following strategies tend to perform best in markets that naturally exhibit prolonged directional moves and regime persistence.
+The dominant behavioral logic underlying these strategies is **momentum and continuation**, often associated with volatility expansion and decompression dynamics used to identify phases of acceleration and consolidation within an existing trend. Consequently, trend-following strategies tend to perform best in markets that naturally exhibit prolonged directional moves and **regime persistence**.
 
 Performance is therefore inherently market-dependent. Certain asset classes—such as commodities and other macro-sensitive instruments (e.g. gold) have historically displayed stronger trend persistence compared to assets that are structurally constrained or predominantly mean-reverting. Effective strategy design and parameterization must explicitly account for these differences in order to achieve robust and repeatable performance.
 
-#### Range-Structure Strategies
+#### *Range-Structure Strategies*
 
+Range-structure strategies are designed to operate in markets characterized by prolonged lateral price behavior, where directional trends are absent or weak. In such environments, price dynamics are dominated by consolidation rather than persistent directional movement, making trend-following approaches less effective.
 
+These strategies are based on the assumption that price tends to oscillate within a bounded structure, often defined by structural support and resistance levels. Volatility is typically contained, and price exhibits limited directional drift. The primary objective is to exploit repetitive oscillatory behavior within the range, while explicitly filtering out phases of sustained directional movement.
 
+Within this family, **range-oscillation** strategies focus on capturing price movements between the upper and lower bounds of the range, with exits typically defined at opposing structural levels rather than directional continuation. **Mean-reversion** strategies are also included within this category, but are distinguished by a different execution objective. These strategies exploit the tendency of price to revert toward a reference value or equilibrium after temporary deviations. The mean itself constitutes the primary profit target, rather than the range boundaries. This behavioral logic is particularly effective during strong consolidation phases, where price fluctuations remain bounded and volatility is compressed.
 
-#### Reversal Strategies
+#### *Reversal Strategies*
 
+Reversal strategies are designed to identify market conditions that precede the emergence of a new directional regime. These strategies focus on detecting structural transitions in market behavior, rather than temporary price fluctuations within an existing regime.
 
-Strategies are classified into three macro-level families based on the underlying market behavior they aim to exploit.
-- Trend-following 
-- Breakout strategies
-- Mean reversion strategies
+The primary objective is to capture phases of **volatility compression** and subsequent decompression, which often signal the formation of **accumulation or distribution processes**. These conditions frequently precede the initiation of a new trend, characterized by increasing directional persistence and expanding volatility.
 
-Each strategy includes:
-- a clear trading logic
-- parameter definitions
-- backtesting methodology
-- performance metrics and evaluation
+By targeting regime transitions rather than equilibrium reversion, reversal strategies aim to exploit the early stages of trend formation. The emphasis is therefore on identifying shifts in market structure and positioning for the onset of sustained directional movement, rather than reacting to established trends.
 
 
 ### Execution Classification
 
-The strategy operates with two execution types.
+Execution logic is organized into two primary entry archetypes, reflecting how directional exposure is initiated within a given market structure.
 
+#### *Breakout entries*
 
-#### Breakout entries
+A breakout entry is defined as a confirmed structural shift in which price exits a prior balance or consolidation regime and begins to exhibit directional behavior. These entries aim to capture the initial phase of momentum expansion following regime transition.
 
-A breakout is defined as a confirmed structural shift in which price exits a prior balance regime and establishes directional behavior.
+#### *Pull Back entries*
 
+Pullback entries are employed after directional behavior has already been established. Two distinct pullback configurations are considered:
+- **Breakout pullbacks**, which occur after a structural break and subsequent retest of the broken level.
+- **Trend pullbacks**, defined as short-term counter-moves occurring within an established directional regime.
 
-#### Pull Back entries
+Not all corrective price movements qualify as valid pullbacks. Only retracements that preserve the underlying market structure and directional bias are considered actionable.
+The execution framework is explicitly limited to breakout pullbacks and trend pullbacks. Deeper corrective structures that suggest a potential primary trend transition are excluded, as they require a separate analytical framework focused on higher-order regime shifts.
 
-We distinguish between breakout pullbacks, which occur after a structural break followed by a retest, and trend pullbacks, defined as short-term counter-moves within an established directional regime. Not all trend corrections qualify as pullbacks.
-
-Our strategies operate exclusively on Type 1 (breakout pullbacks) and Type 2 (trend pullbacks). Type 3 corrections represent potential primary trend shifts and therefore require a separate analytical framework, including Elliott Wave Theory.
 
 ## Strategy Design
 
