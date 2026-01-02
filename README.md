@@ -1,4 +1,4 @@
-# Bridging Discretionary Intuition and Systematic Trading Frameworks
+# From Market Intuition to Systematic Strategy Design
 
 The objective of this repository is to document the process of transforming discretionary trading insights into formalized, rule-based trading strategies.
 
