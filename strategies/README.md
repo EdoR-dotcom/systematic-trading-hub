@@ -1,8 +1,8 @@
 # Strategies Laboratory
 
-This section represents the research hub where trading strategies are designed and developed. Before detailing the specific mechanics of strategy construction, the organizational framework used to classify strategies is introduced.
+This section represents the research hub where trading strategies are designed and developed. Before detailing the specific mechanics of strategy construction, the [classification framework](#foundational-framework) used to classify strategies is introduced.
 
-Subsequently, the [process](#strategy-design) used to build robust trading strategies is presented. The framework provides a structured foundation for defining the core strategy architecture, while supporting the incremental integration of supplementary triggers, filters, and constraints aimed at improving robustness and regime adaptability.
+Subsequently, the [decision framework](#strategy-design) used to build robust trading strategies is presented. It provides a structured foundation for defining the core strategy architecture, while supporting the incremental integration of supplementary triggers, filters, and constraints aimed at improving robustness and regime adaptability.
 
 
 ## Foundational Framework
