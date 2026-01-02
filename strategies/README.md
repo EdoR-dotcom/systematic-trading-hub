@@ -8,7 +8,7 @@ Subsequently, the [decision framework](#strategy-design) used to build robust tr
 ## Foundational Framework
 
 Strategies are classified according to two characteristics, in hierarchical order.
-First, they are categorized based on the type of **market structure**they are designed to exploit.
+First, they are categorized based on the type of **market structure** they are designed to exploit.
 Second, they are differentiated by the **execution logic** through which alpha is extracted.
 
 
