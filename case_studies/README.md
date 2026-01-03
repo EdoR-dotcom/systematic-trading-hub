@@ -25,8 +25,8 @@ Each strategy underwent parameter optimization and was tested on the same datase
 ### Price Dynamics & Signal Structure
 
 <p align="center">
-  <img src="pfe/pfe_price_triplema.png" width="45%" />
-  <img src="pfe/pfe_price_bbands.png" width="45%" />
+  <img src="pfe/pfizer_price_triplema.png" width="45%" />
+  <img src="pfe/pfizer_price_bbout.png" width="45%" />
 </p>
 
 The charts illustrate how each strategy interacts with price dynamics:
@@ -40,7 +40,7 @@ The charts illustrate how each strategy interacts with price dynamics:
 
 <p align="center">
   <img src="pfe/pfe_backtest_performance_triplema.png" width="45%" />
-  <img src="pfe/pfe_backtest_performance_bbands.png" width="45%" />
+  <img src="pfe/pfe_backtest_performance_bbout.png" width="45%" />
 </p>
 
 Both strategies demonstrate resilience during benchmark drawdowns and improved risk-adjusted performance compared to buy-and-hold, while exhibiting distinct behavioral profiles across different market regimes.
