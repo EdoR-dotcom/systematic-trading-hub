@@ -25,8 +25,8 @@ Each strategy underwent parameter optimization and was tested on the same datase
 ### Price Dynamics & Signal Structure
 
 <p align="center">
-  <img src="pfe/pfizer_price_triplema.png" width="45%" />
-  <img src="pfe/pfizer_price_bbout.png" width="45%" />
+  <img src="pfe/pfizer_chart_triplema.png" width="45%" />
+  <img src="pfe/pfizer_chart_bbout.png" width="45%" />
 </p>
 
 The charts illustrate how each strategy interacts with price dynamics:
