@@ -49,7 +49,7 @@ Execution logic is organized into two primary entry archetypes, reflecting how d
 
 A breakout entry is defined as a confirmed structural shift in which price exits a prior balance or consolidation regime and begins to exhibit directional behavior. These entries aim to capture the initial phase of momentum expansion following regime transition.
 
-#### *Pull Back entries*
+#### *Pullback entries*
 
 Pullback entries are employed after directional behavior has already been established. Two distinct pullback configurations are considered:
 - **Breakout pullbacks**, which occur after a structural break and subsequent retest of the broken level.
