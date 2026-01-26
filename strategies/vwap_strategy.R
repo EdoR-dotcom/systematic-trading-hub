@@ -27,4 +27,48 @@ library(quantmode)
 library(dplyr)
 
 
-vwap_pullback <- 
+vwap_pullback <- function(data,
+                           price_col = "prccd",
+                           mid_n = 50,
+                           slow_n = 200,
+                           rsi_n = 14,
+                           rsi_bull_thr = 53,
+                           rsi_overbought_thr = 75,
+                           vol_col_4h = "vol",
+                           vol_col_1d = "vol",
+                           vroc_n = 14,
+                           vwap
+                           ) {
+
+  price <- data[[price_col]]
+
+  data <- data %>%
+    mutate(
+    
+    #------ Structure screener-----Layer 1-------#
+
+      # RSI filter for trend direction
+      rsi = RSI(price, n = rsi_n),
+
+      rsi_bulltrend_filter  = rsi_bull_thr < rsi & rsi > rsi_overbought_thr,
+
+      # MAs filter for trend structure
+
+      MA_mid  = EMA(price, n = mid_n),    
+      MA_slow = SMA(price, n = slow_n),
+      p_retrace = price < MA_mid, 
+      bull_trend = p_retrace & MA_slow & MA_mid,
+
+    #-------- Execution Strategy------Layer 2------#
+
+    
+
+      
+    
+
+     
+
+
+    
+
+    
